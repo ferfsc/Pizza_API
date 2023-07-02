@@ -1,4 +1,4 @@
-﻿using API_Pizza.Builder;
+﻿using Pizza_API.Builder;
 
 namespace Pizza_API.Builder
 {
@@ -9,6 +9,15 @@ namespace Pizza_API.Builder
             Pizza = new Pizza
             {
                 Tamano = tamano
+            };
+        }
+
+        public CuadradaEspecial(string tamano, int cantidad)
+        {
+            Pizza = new Pizza
+            {
+                Tamano = tamano,
+                Cantidad = cantidad
             };
         }
 
@@ -29,6 +38,11 @@ namespace Pizza_API.Builder
         public override void PasoDefinirForma()
         {
             Pizza.Forma = "Redonda";
+        }
+
+        public override void PasoDefinirCantidadPizza()
+        {
+            //Pizza.Cantidad = cantidad;
         }
     }
 }

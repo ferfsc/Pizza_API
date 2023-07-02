@@ -1,10 +1,17 @@
-﻿namespace API_Pizza.Builder
+﻿namespace Pizza_API.Builder
 {
     public class NapolitanaBuilder: PizzaBuilder
     {
         public NapolitanaBuilder(string tamano)
         {
             Pizza = new Pizza { Tamano = tamano };
+        }
+        public NapolitanaBuilder(string tamano, int cantidad)
+        {
+            Pizza = new Pizza { 
+                Tamano = tamano,
+                Cantidad = cantidad
+            };
         }
 
         public override void PasoPrepararMasa()
@@ -21,7 +28,7 @@
         {
             Pizza.Relleno = "mozzarela+aceite de oliva+parmesano";
         }
-
+            
         public override void PasoDefinirForma()
         {
             Pizza.Forma = "Redonda";

@@ -1,4 +1,4 @@
-﻿namespace API_Pizza.Builder
+﻿namespace Pizza_API.Builder
 {
     public abstract class PizzaBuilder
     {
@@ -6,6 +6,7 @@
         protected Pizza Pizza;
         public string Tamano { get; set; }
 
+        public int cantidad { get; set; }
         public Pizza ObtenerPizza() { 
             return Pizza; 
         }
@@ -31,6 +32,10 @@
         }
 
         public virtual void PasoDefinirForma()
+        {
+
+        }
+        public virtual void PasoDefinirCantidadPizza()
         {
 
         }

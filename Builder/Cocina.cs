@@ -1,4 +1,4 @@
-﻿namespace API_Pizza.Builder
+﻿namespace Pizza_API.Builder
 {
     public class Cocina
     {
@@ -11,9 +11,20 @@
             return PizzaPreparada;
         }
 
+        public Pizza CocinarPizza(PizzaBuilder pizzaBuilder, int cantidad)
+        {
+            RecepcionarProximaPizza(pizzaBuilder, cantidad);
+            CocinarPizzaPasoAPaso();
+            return PizzaPreparada;
+        }
         public void RecepcionarProximaPizza(PizzaBuilder pizzaBuilder)
         {
             _pizzaBuilder = pizzaBuilder;
+        }
+        public void RecepcionarProximaPizza(PizzaBuilder pizzaBuilder, int cantidad)
+        {
+            _pizzaBuilder = pizzaBuilder;
+            _pizzaBuilder.cantidad = cantidad;
         }
         public void CocinarPizzaPasoAPaso()
         {
@@ -21,6 +32,7 @@
             _pizzaBuilder.PasoAdicionarSalsa();
             _pizzaBuilder.PasoPrepararRelleno();
             _pizzaBuilder.PasoDefinirForma();
+            _pizzaBuilder.PasoDefinirCantidadPizza();
         }
 
         public Pizza PizzaPreparada

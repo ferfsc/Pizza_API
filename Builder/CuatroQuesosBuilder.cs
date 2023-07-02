@@ -1,4 +1,4 @@
-﻿namespace API_Pizza.Builder
+﻿namespace Pizza_API.Builder
 {
     public class CuatroQuesosBuilder: PizzaBuilder
     {
@@ -7,6 +7,15 @@
             Pizza = new Pizza
             {
                 Tamano = tamano
+            };
+        }
+
+        public CuatroQuesosBuilder(string tamano, int cantidad)
+        {
+            Pizza = new Pizza
+            {
+                Tamano = tamano,
+                Cantidad = cantidad
             };
         }
 
@@ -27,6 +36,10 @@
         public override void PasoDefinirForma()
         {
             Pizza.Forma = "Redonda";
+        }
+        public override void PasoDefinirCantidadPizza()
+        {
+           
         }
     }
 }

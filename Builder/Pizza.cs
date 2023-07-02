@@ -1,4 +1,4 @@
-﻿namespace API_Pizza.Builder
+﻿namespace Pizza_API.Builder
 {
     public class Pizza
     {
@@ -9,17 +9,19 @@
 
         public string Forma { get; set; }
 
+        public int Cantidad { get; set; }
         public Pizza() { 
         
         }
 
-        public Pizza(string tamano, string masa, string salsa, string relleno, string forma) : this()
+        public Pizza(string tamano, string masa, string salsa, string relleno, string forma, int cantidad) : this()
         {
             Tamano = tamano;
             Masa = masa;
             Salsa = salsa;
             Relleno = relleno;
             Forma = forma;
+            Cantidad = cantidad;
         }
     }
 }
