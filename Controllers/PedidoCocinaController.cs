@@ -21,5 +21,12 @@ namespace Pizza_API.Controllers
             return Ok(new { sol_pizza.Tamano, sol_pizza.Masa, sol_pizza.Salsa, sol_pizza.Forma, sol_pizza.Cantidad });
 
         }
+
+        [Route("Crear Pedido Pizza")]
+        [HttpPost]
+        public IActionResult CrearPizza(Pizza datos)
+        {
+            return Ok();
+        }
     }
 }

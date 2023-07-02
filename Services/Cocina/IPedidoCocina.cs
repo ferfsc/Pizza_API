@@ -7,5 +7,7 @@ namespace Pizza_API.Services.Cocina
         Pizza SolicitarPizza(int cantidad);
 
         List<Pizza> VerMenu();
+
+        Pizza CrearPizza(Pizza datos, string nombre, int cantidad);
     }
 }

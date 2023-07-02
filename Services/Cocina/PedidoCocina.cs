@@ -19,5 +19,16 @@ namespace Pizza_API.Services.Cocina
 
             return cocina.PizzaPreparada;
         }
+
+        public Pizza CrearPizza(Pizza datos, string nombre, int cantidad)
+        {
+            var cocina = new Builder.Cocina();
+            var _pizza = new CrearPizza(datos.Tamano, datos.Masa, datos.Salsa, datos.Relleno, datos.Forma, datos.Cantidad);
+            
+            cocina.RecepcionarProximaPizza(_pizza);
+            cocina.CocinarPizzaPasoAPaso();
+           
+            return cocina.PizzaPreparada;
+        }
     }
 }
