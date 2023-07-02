@@ -1,54 +1,46 @@
-﻿using System.Runtime.Intrinsics.X86;
-
-namespace Pizza_API.Builder
+﻿namespace Pizza_API.Builder.ProdPizzas
 {
-    public class CrearPizza : PizzaBuilder
+    public class CuatroQuesosBuilder : PizzaBuilder
     {
-
-        public CrearPizza(string tamano)
+        public CuatroQuesosBuilder(string tamano)
         {
             Pizza = new Pizza
             {
+                Nombre = "Cuatro Quesos",
                 Tamano = tamano
             };
         }
 
-        public CrearPizza(string tamano, string masa, string salsa, string relleno, string forma, int cantidad)
+        public CuatroQuesosBuilder(string tamano, int cantidad)
         {
             Pizza = new Pizza
             {
                 Tamano = tamano,
-                Masa = masa,
-                Salsa = salsa,
-                Relleno = relleno,
-                Forma = forma,
                 Cantidad = cantidad
             };
         }
-       
 
         public override void PasoPrepararMasa()
         {
-            
+            Pizza.Masa = "Cocido";
         }
 
         public override void PasoAdicionarSalsa()
         {
-            
+            Pizza.Salsa = "Roquefort";
         }
 
         public override void PasoPrepararRelleno()
         {
-            
+            Pizza.Relleno = "mozzarela+gorgonzola+parmesano+ricotta+chorizo";
         }
         public override void PasoDefinirForma()
         {
-           
+            Pizza.Forma = "Redonda";
         }
-
         public override void PasoDefinirCantidadPizza()
         {
-            
+
         }
     }
 }

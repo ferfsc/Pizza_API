@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Pizza_API.Builder;
+using Pizza_API.Builder.ProdPizzas;
 using Pizza_API.Services.Cocina;
 
 namespace Pizza_API.Controllers

@@ -1,4 +1,5 @@
 ﻿using Pizza_API.Builder;
+using Pizza_API.Builder.ProdPizzas;
 
 namespace Pizza_API.Services.Cocina
 {
@@ -11,7 +12,7 @@ namespace Pizza_API.Services.Cocina
 
         public Pizza SolicitarPizza(int cantidad)
         {
-            var cocina = new Builder.Cocina();
+            var cocina = new Builder.ProdPizzas.Cocina();
 
             cocina.RecepcionarProximaPizza(new CuatroQuesosBuilder("Familiar",cantidad ));
             cocina.CocinarPizzaPasoAPaso();
@@ -22,8 +23,8 @@ namespace Pizza_API.Services.Cocina
 
         public Pizza CrearPizza(Pizza datos, string nombre, int cantidad)
         {
-            var cocina = new Builder.Cocina();
-            var _pizza = new CrearPizza(datos.Tamano, datos.Masa, datos.Salsa, datos.Relleno, datos.Forma, datos.Cantidad);
+            var cocina = new Builder.ProdPizzas.Cocina();
+            var _pizza = new CrearPizza(datos.Nombre, datos.Tamano, datos.Masa, datos.Salsa, datos.Relleno, datos.Forma, datos.Cantidad);
             
             cocina.RecepcionarProximaPizza(_pizza);
             cocina.CocinarPizzaPasoAPaso();
