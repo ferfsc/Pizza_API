@@ -24,9 +24,10 @@ namespace Pizza_API.Controllers
 
         [Route("Crear Pedido Pizza")]
         [HttpPost]
-        public IActionResult CrearPizza(Pizza datos)
+        public IActionResult CrearPizza(Pizza datos, string nombre, int cantidad)
         {
-            return Ok();
+            Pizza sol_pizza = _pedido.CrearPizza(datos, nombre, cantidad);
+            return Ok(sol_pizza);
         }
     }
 }
