@@ -1,8 +1,8 @@
-﻿namespace Pizza_API.Builder
+﻿namespace Pizza_API.Builder.ProdPizzas
 {
-    public class CuatroQuesosBuilder: PizzaBuilder
+    public class CuadradaEspecial : PizzaBuilder
     {
-        public CuatroQuesosBuilder(string tamano)
+        public CuadradaEspecial(string tamano)
         {
             Pizza = new Pizza
             {
@@ -10,10 +10,11 @@
             };
         }
 
-        public CuatroQuesosBuilder(string tamano, int cantidad)
+        public CuadradaEspecial(string tamano, int cantidad)
         {
             Pizza = new Pizza
             {
+                Nombre = "Cuadrada",
                 Tamano = tamano,
                 Cantidad = cantidad
             };
@@ -21,12 +22,12 @@
 
         public override void PasoPrepararMasa()
         {
-            Pizza.Masa = "Cocido";
+            Pizza.Masa = "Super Cocida";
         }
 
         public override void PasoAdicionarSalsa()
         {
-            Pizza.Salsa = "Roquefort";
+            Pizza.Salsa = "Sala de Tomate";
         }
 
         public override void PasoPrepararRelleno()
@@ -37,9 +38,10 @@
         {
             Pizza.Forma = "Redonda";
         }
+
         public override void PasoDefinirCantidadPizza()
         {
-           
+            //Pizza.Cantidad = cantidad;
         }
     }
 }

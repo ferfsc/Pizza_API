@@ -1,4 +1,4 @@
-﻿namespace Pizza_API.Builder
+﻿namespace Pizza_API.Builder.ProdPizzas
 {
     public class Cocina
     {

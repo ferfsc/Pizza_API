@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Pizza_API.Builder;
+using Pizza_API.Builder.ProdPizzas;
 using Pizza_API.Services.Cocina;
 
 namespace Pizza_API.Controllers
@@ -20,6 +20,14 @@ namespace Pizza_API.Controllers
             Pizza sol_pizza = _pedido.SolicitarPizza(cantidad);
             return Ok(new { sol_pizza.Tamano, sol_pizza.Masa, sol_pizza.Salsa, sol_pizza.Forma, sol_pizza.Cantidad });
 
+        }
+
+        [Route("Crear Pedido Pizza")]
+        [HttpPost]
+        public IActionResult CrearPizza(Pizza datos, string nombre, int cantidad)
+        {
+            Pizza sol_pizza = _pedido.CrearPizza(datos, nombre, cantidad);
+            return Ok(sol_pizza);
         }
     }
 }
